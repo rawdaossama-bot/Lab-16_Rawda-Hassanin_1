@@ -8,3 +8,21 @@ lines = path.read_text(encoding="utf-8").splitlines()
 reader = csv.reader(lines)
 header_row = next(reader)
 
+for index, col_title in enumerate(header_row):
+      print(f"{index}: {col_title}",  end=' ') 
+print()
+
+  
+dates = []
+Rates = []
+
+for row in reader:
+    try:
+        
+        Rate = float(row[1])
+    except ValueError:
+        print(f"Missing data for {Rate}")
+    else:
+       
+        Rates.append(Rate)
+        
