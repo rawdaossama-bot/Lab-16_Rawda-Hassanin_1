@@ -28,3 +28,15 @@ for row in reader:
         Dates.append(current_date)
         Rates.append(Rate)
         
+        
+#Graphing the data
+plt.style.use('seaborn-v0_8-bright')
+figure, graph = plt.subplots()
+
+graph.set_title("Ohio Unemployment(by Months) 1976-2022 ", fontsize=20,color='blue', pad=20)
+graph.set_xlabel("Date", fontsize=16, color='black', labelpad=15)
+graph.set_ylabel("Unemployment Rate (%)",fontsize=16, color='black', labelpad=15)
+figure.autofmt_xdate()
+
+graph.plot(Dates,Rates, c='red')
+plt.show()        
